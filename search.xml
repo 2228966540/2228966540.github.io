@@ -41,6 +41,19 @@
     </entry>
     
     
+    
+    <entry>
+      <title>win7安装Vmtools</title>
+      <link href="/2024/01/05/c/"/>
+      <url>/2024/01/05/c/</url>
+      
+        <content type="html"><![CDATA[<p>装了个win7系统捣鼓东西，然后发现，因为系统太老了，vmtools根本装不上<br>以前的开机启动时点安装vmtools按钮没用，文件进不去，浏览器也停止服务了<br>解决：</p><h2 id="方案一-u盘通信"><a href="#方案一-u盘通信" class="headerlink" title="方案一 u盘通信"></a>方案一 u盘通信</h2><p>插u盘，看看能不能识别，如果可以的话<br><a href="https://www.catalog.update.microsoft.com/search.aspx?q=kb4474419">https://www.catalog.update.microsoft.com/search.aspx?q=kb4474419</a><br>去这个网站下载[2019-适用于 Windows 7 的 09 安全更新，适合基于 x64 的系统 (KB4474419)  选53.3MB那个</p><p>然后把这个和vmtools安装包一起拷到虚拟机<br>双击打开下载的那个文件，安装好之后，安装VMtools</p><h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><p>首先去菜单页面找64位的IE，去搜360官网，点侧面的快速下载下360浏览器</p><p>然后通过QQ邮箱通信发来vmtools和下面这个网址</p><p><a href="https://www.catalog.update.microsoft.com/search.aspx?q=kb4474419">https://www.catalog.update.microsoft.com/search.aspx?q=kb4474419</a><br>在这个网址下载<br>[2019-适用于 Windows 7 的 09 安全更新，适合基于 x64 的系统 (KB4474419) 选53.3MB那个</p><p>安装补丁（双击打开即可），然后安装vmtools</p><h2 id="方案三-远程连接"><a href="#方案三-远程连接" class="headerlink" title="方案三 远程连接"></a>方案三 远程连接</h2><p>先给虚拟机的账户设置密码（已设置可跳过）<br>开始–&gt;控制面板–&gt;用户账户和家庭安全–&gt;更改windows密码<br>记住你的用户名和密码，没有添加修改删除的话，用户名默认为Administrator</p><p>在虚拟机中打开远程连接的权限<br>开始–&gt;控制面板–&gt;系统和安全–&gt;系统–&gt;远程设置<br>在系统属性-远程-远程桌面中，选择“允许运行任意版本远程桌面的计算机连接”，再按确定。</p><p>打开命令行窗口（win + R 输入cmd）<br>输入 ipconfig<br>”以太网适配器 本地连接： “下面的IPv4地址就是你的虚拟机ip（一般是以192.168开头的）</p><p>主机搜索远程桌面连接（或者win + R 打开mstsc）<br>点击显示选项 展开窗<br>点击本地资源 在本地设备和资源 中点击详细信息，选中安装包所在的磁盘，点击连接，然后去虚拟机-我的电脑-重定向的磁盘 找到共享的磁盘，将安装包和补丁拷贝过来</p><p>补丁下载路径<br><a href="https://www.catalog.update.microsoft.com/search.aspx?q=kb4474419">https://www.catalog.update.microsoft.com/search.aspx?q=kb4474419</a><br>[2019-适用于 Windows 7 的 09 安全更新，适合基于 x64 的系统 (KB4474419) 选53.3MB那个</p><p>注意：<br>不要直接试着安装vmtools！！<br>安装到一半会报错：Windows无法验证此驱动程序软件的发布者<br>装上补丁就好了</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
   
   
 </search>
