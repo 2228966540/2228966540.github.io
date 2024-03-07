@@ -23,7 +23,7 @@
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":42},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -229,12 +229,12 @@
 <p>ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。</p>
 <p>而后在GitHub的setting（设置）中，找到SSH keys的设置选项，点击New SSH key<br>把你的id_rsa.pub里面的信息复制进去。</p>
 <p>在终端中，查看是否成功</p>
-<p>ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a></p>
+<p>ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;</a></p>
 <h4 id="注意：如果出现以下报错ssh-connect-to-host-github-com-port-22-Connection-refused"><a href="#注意：如果出现以下报错ssh-connect-to-host-github-com-port-22-Connection-refused" class="headerlink" title="注意：如果出现以下报错ssh: connect to host github.com port 22: Connection refused"></a>注意：如果出现以下报错ssh: connect to host github.com port 22: Connection refused</h4><p>这个错误提示的是连接github.com的22端口被拒绝了。</p>
 <p>解决方法一：（实测这个方法可以，不行的话看看我搜到的第二个解决方案，那个方案我没试，因为第一个方法就解决了）</p>
 <p>原理：修改访问时要走的端口号</p>
 <p>第一次遇到这个报错时，.ssh文件夹里可能是没有config文件的，可以直接在该文件夹下新建config.txt文件，将下面的命令直接粘贴进去,保存退出后，把此文件的.txt后缀删除（重命名）</p>
-<p>Host github.com<br>  Hostname ssh.github.com<br>  Port 443修改完成后，在Git Bash 里输入：ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;">&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;</a>  来测试是否能连接上（切记一切配置改完先测试，避免无用浪费）</p>
+<p>Host github.com<br>  Hostname ssh.github.com<br>  Port 443修改完成后，在Git Bash 里输入：ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#x6d;</a>  来测试是否能连接上（切记一切配置改完先测试，避免无用浪费）</p>
 <p>如果回车后出现以下回复：</p>
 <p> 它翻译过来意思是：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">无法确定主机“[ssh.github.com]：443 （[20.205.243.160]：443）”的真实性。</span><br><span class="line">ED25519 密钥指纹是 SHA256：巴拉巴拉巴拉阿巴阿巴啊巴</span><br><span class="line">此密钥以任何其他名称未知</span><br><span class="line">是否确实要继续连接（是/否/[指纹]）？</span><br></pre></td></tr></table></figure>
@@ -243,14 +243,14 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi xxx! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 
 
-<p>出现这样的提示说明连接成功了，不放心可以再用ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#x6d;</a>测试一下，还会出现上面的successfully提示。</p>
+<p>出现这样的提示说明连接成功了，不放心可以再用ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>测试一下，还会出现上面的successfully提示。</p>
 <p>如果改了443端口号依然走不通（ssh: connect to host github.com port 443: Connection refused），那你可能需要下面的这个方法</p>
 <p>解决方法二：</p>
-<p>这个方案有效的前提是：执行命令ssh -T -p 443 <a href="mailto:&#103;&#105;&#116;&#x40;&#x73;&#115;&#x68;&#46;&#x67;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#105;&#116;&#x40;&#x73;&#115;&#x68;&#46;&#x67;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a>后不再提示connection refused，所以要尝试这个方案的小伙伴先执行这条命令测试下<br>使用https协议，不要使用ssh协议</p>
+<p>这个方案有效的前提是：执行命令ssh -T -p 443 <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x73;&#x73;&#x68;&#x2e;&#103;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#64;&#x73;&#x73;&#x68;&#x2e;&#103;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>后不再提示connection refused，所以要尝试这个方案的小伙伴先执行这条命令测试下<br>使用https协议，不要使用ssh协议</p>
 <p>在你的GitHub的本地repo目录，执行如下命令：</p>
 <p>$ git config –local -e</p>
 <p>然后把里面的url配置项从git格式</p>
-<p>url &#x3D; <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#109;</a>:username&#x2F;repo.git</p>
+<p>url &#x3D; <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a>:username&#x2F;repo.git</p>
 <p>修改为https格式</p>
 <p>url &#x3D; <a target="_blank" rel="noopener" href="https://github.com/username/repo.git">https://github.com/username/repo.git</a></p>
 <p>这个其实修改的是repo根目录下的.&#x2F;git&#x2F;config文件。</p>
